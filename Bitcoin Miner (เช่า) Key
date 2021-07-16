@@ -1,0 +1,26 @@
+local day_f = tonumber(os.date("%d"))
+local month_f = tonumber(os.date("%m"))
+local year_f = tonumber(os.date("%Y"))
+----------------------------------------------------------------------------------------------------------------------------
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+----------------------------------------------------------------------------------------------------------------------------
+if _G.Key == "ADMIN" then
+    local death_day = 30             --ใส่วัน
+    local death_month = 12           --ใส่เดือน
+    local death_year = 2029        --ใส่ปี
+
+    if year_f <= death_year then
+        if month_f == death_month then
+            if day_f <= death_day then
+                _G.Hmyourdate = "Pass"
+            else
+                game.Players.LocalPlayer:Kick("หมดอายุการเช่าแล้วครับ")
+            end
+        elseif month_f < death_month - 1 then
+            _G.Hmyourdate = "Pass"
+        else
+            game.Players.LocalPlayer:Kick("หมดอายุการเช่าแล้วครับ")
+        end
+    else
+        game.Players.LocalPlayer:Kick("หมดอายุการเช่าแล้วครับ")
+    end
