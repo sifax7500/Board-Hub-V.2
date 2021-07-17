@@ -413,6 +413,8 @@ function Flux:Window(text, bottom,mainclr,toclose)
 		Tab.TextColor3 = Color3.fromRGB(0, 0, 0)
 		Tab.TextSize = 14.000
 		Tab.BackgroundTransparency = 1
+        UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(160, 207, 236)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(102, 152, 255))}
+     UIGradient.Parent = Tab
 
 		TabIcon.Name = "TabIcon"
 		TabIcon.Parent = Tab
